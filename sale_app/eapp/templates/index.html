@@ -1,0 +1,21 @@
+{% include 'Layout/base.html' %}
+{% block content %}
+{% if products %}
+<div class="row">
+    {%for c in products %}
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="{{c.image}}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">{{c.name}}</h4>
+            <p class="card-text">{{c.price}} VND</p>
+            <a href="#" class="btn btn-primary">Xem chi tiet</a>
+            <button class="btn btn-danger">Dat Hang</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="alert alert-warning mt - 2">KHONG co san pham nao!</div>
+{% endif %}
+
+{% endblock %}
